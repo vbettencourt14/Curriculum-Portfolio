@@ -1,3 +1,4 @@
+/* general body theme*/
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body {
     overflow: hidden; /* Hide scrollbar during loading animation */
   }
   
+/* container for the loading bar*/
   #loading-container {
     position: fixed;
     top: 0;
@@ -22,6 +24,7 @@ body {
     transition: opacity 2s ease;
   }
   
+  /* theme for the loading bar */
   #loading-bar {
     opacity: 1;
     transition: opacity 1s ease;
@@ -33,6 +36,7 @@ body {
     border: 3px solid #020202
   }
   
+  /* the suqares tha divide the loading bar*/
   .loading-square {
     flex: 1;
     background-color: #333; /* Dark grey color */
@@ -40,6 +44,7 @@ body {
     transition: background-color 0.5s ease, border-color 0.5s ease; /* Set transition duration to 0.5 seconds */
   }
 
+  /* refers to the loading bar and the cogwheel image */
   #loading-content {
     display: flex;
     align-items: center;
@@ -47,6 +52,7 @@ body {
     flex-direction: column; /* Adjust if needed based on your layout */
   }
   
+  /* cogwheel image */
   #rotating-image {
     position: relative;
     width: 200px; /* Adjust the width as needed */
@@ -59,7 +65,7 @@ body {
     100% { transform: rotate(360deg); }
   }
   
-
+/* style to center elements */
 .center {
   display: flex;
   justify-content: center;
@@ -78,6 +84,8 @@ body {
   background-color: black;
   z-index: 9999;
 }
+
+/* themes for the start button */
 #start-button {
   cursor: pointer;
   width: 200px; /* Adjust the width as needed */
@@ -86,18 +94,42 @@ body {
   transition: filter 0.2s ease; /* Set transition duration for smooth effect */
 }
 
+/* color change when hover over the start button */
 #start-button:hover {
   filter: brightness(4) sepia(3) hue-rotate(120deg); /* Adjust the values for brightness, sepia, and hue-rotate */ 
 }
 
+/* transaction into the portfolio section */
 #portfolio-section {
   opacity: 0;
   transition: opacity 1s ease; /* Set transition duration to 1 second */
 }
-  /* Rest of your styles... */
-  
+ 
+/* Navigation tool bar theme and button stuff*/
 
-  
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+a, button {
+  text-decoration: none;
+  color: grey;
+  background-color: black;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a:hover, button:hover {
+  color: #00ff00;
+  border: 1px solid #00ff00;
+}
+/**/
 
 
   
