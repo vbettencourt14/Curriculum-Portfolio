@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to fill the loading squares progressively
   function fillSquares() {
     var squares = document.querySelectorAll(".loading-square");
-    var cogwheel = document.getElementById("cogwheel");
+    var cogwheel = document.getElementById("rotating-image");
 
     // Helper function to play audio and handle errors
     function playAudio() {
@@ -25,38 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         clearInterval(interval);
 
-        // After the last square turns dark green, play the audio
+        // After the last square turns dark green, wait for 1 second, then brighten all squares
         setTimeout(function () {
           squares.forEach(square => {
             square.style.backgroundColor = "#00ff00"; // Turn all squares bright green
           });
 
-          // Hide the cogwheel
-          if (cogwheel) {
-            cogwheel.style.display = "none";
-          }
+          // After the loading bar is complete, initiate the fade-out process
+          setTimeout(function () {
+            fadeOutLoadingBarAndCogwheel();
+          }, 1000); // Wait for 1 second after the last square turns dark green
 
-          // Play the audio
+          // Play the audio after the loading bar is complete
           playAudio();
-
-          // After the loading bar is complete, hide the loading container
-          var loadingContainer = document.getElementById("loading-container");
-          if (loadingContainer) {
-            loadingContainer.style.opacity = "0";
-            setTimeout(function () {
-              loadingContainer.style.display = "none";
-
-              // Show and fade in the portfolio section
-              var portfolioSection = document.getElementById("portfolio-section");
-              if (portfolioSection) {
-                portfolioSection.style.opacity = "1"; // Set opacity to 1 directly
-              } else {
-                console.error("Portfolio section not found.");
-              }
-            }, 1000); // Set the duration of the transition in milliseconds
-          } else {
-            console.error("Loading container not found.");
-          }
         }, 1000); // Wait for 1 second after the last square turns dark green
       }
     }, 1000); // Set the duration for each square to fill (adjust as needed)
@@ -64,13 +45,75 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to initiate the loading process
   function startLoading() {
-    // After 1 seconds, start filling the loading squares
+    // After 1 second, start filling the loading squares
     setTimeout(fillSquares, 1000); // Set the loading duration in milliseconds
   }
 
-  // Call startLoading when the user clicks on the document
-  document.addEventListener("click", startLoading);
+  // Function to fade out the loading bar and cogwheel
+  function fadeOutLoadingBarAndCogwheel() {
+    var loadingContent = document.getElementById("loading-content");
+  
+    if (loadingContent) {
+      loadingContent.style.transition = "opacity 1s ease"; // Set transition for loading content
+      loadingContent.style.opacity = "0";
+  
+      // After the fade-out, hide the loading container and fade in the portfolio section
+      setTimeout(function () {
+        var loadingContainer = document.getElementById("loading-container");
+        if (loadingContainer) {
+          loadingContainer.style.display = "none";
+  
+          // Show and fade in the portfolio section
+          var portfolioSection = document.getElementById("portfolio-section");
+          if (portfolioSection) {
+            portfolioSection.style.transition = "opacity 1s ease"; // Set transition for portfolio section
+            portfolioSection.style.opacity = "1"; // Set opacity to 1 directly
+          } else {
+            console.error("Portfolio section not found.");
+          }
+        } else {
+          console.error("Loading container not found.");
+        }
+      }, 1000); // Set the duration of the transition in milliseconds
+    } else {
+      console.error("Loading content not found.");
+    }
+  }
 
+  // Function to handle button click
+  function handleButtonClick() {
+    var startContainer = document.getElementById("start-container");
+    var loadingContainer = document.getElementById("loading-container");
+    var startAudio = document.getElementById("start-audio");
+
+    if (startContainer && loadingContainer && startAudio) {
+      // Play the start button audio
+      startAudio.play();
+
+      // Hide the start container immediately
+      startContainer.style.display = "none";
+
+      // Show the loading container after a brief delay
+      setTimeout(function () {
+        loadingContainer.style.display = "flex";
+
+        // Start the loading process
+        startLoading();
+      }, 500); // Adjust the delay time in milliseconds
+    } else {
+      console.error("Start or loading container or start audio not found.");
+    }
+  }
+
+  // Call handleButtonClick when the user clicks on the start button
+  var startButton = document.getElementById("start-button");
+  if (startButton) {
+    startButton.addEventListener("click", handleButtonClick);
+  } else {
+    console.error("Start button not found.");
+  }
+
+  // Function to rotate the image
   function rotateImage() {
     var rotatingImage = document.getElementById("rotating-image");
     if (rotatingImage) {
@@ -90,5 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  rotateImage()
+  rotateImage();
+
 });

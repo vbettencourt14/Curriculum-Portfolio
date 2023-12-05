@@ -8,18 +8,27 @@
 </head>
 <body>
 
+  <!-- Start Button Container -->
+  <div id="start-container" class="center">
+    <img id="start-button" src="images/start.png" alt="Start Button">
+    <audio id="start-audio" src="mp3/switch.mp3"></audio>
+  </div>
+
   <!-- Loading Bar Container -->
   
   <div id="loading-container">
-    <img id="rotating-image" src="images/cogwheel.png" alt="Rotating Image">
-    <div id="loading-bar">
-      <div class="loading-square"></div>
-      <div class="loading-square"></div>
-      <div class="loading-square"></div>
-      <div class="loading-square"></div>
-      <div class="loading-square"></div>
+    <div id="loading-content">
+      <img id="rotating-image" src="images/cogwheel.png" alt="Rotating Image">
+      <div id="loading-bar">
+        <div class="loading-square"></div>
+        <div class="loading-square"></div>
+        <div class="loading-square"></div>
+        <div class="loading-square"></div>
+        <div class="loading-square"></div>
+      </div>
     </div>
   </div>
+
 
   <!-- Portfolio Content -->
   <section id="portfolio-section" style="opacity: 0;">
@@ -35,7 +44,6 @@
       <p>Your skills, achievements, or any other details you want to showcase.</p>
     </section>
 
-    <!-- Video element for MP4 file -->
     <audio id="audio-player" controls style="display: none;">
         <source src="mp3/loading.mp3" type="audio/mp3">
       </audio>
