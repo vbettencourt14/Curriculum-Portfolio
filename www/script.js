@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   // Function to fill the loading squares progressively
   function fillSquares() {
     var squares = document.querySelectorAll(".loading-square");
@@ -58,15 +59,36 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }, 1000); // Wait for 1 second after the last square turns dark green
       }
-    }, 600); // Set the duration for each square to fill (adjust as needed)
+    }, 1000); // Set the duration for each square to fill (adjust as needed)
   }
 
   // Function to initiate the loading process
   function startLoading() {
-    // After 3 seconds, start filling the loading squares
-    setTimeout(fillSquares, 3000); // Set the loading duration in milliseconds
+    // After 1 seconds, start filling the loading squares
+    setTimeout(fillSquares, 1000); // Set the loading duration in milliseconds
   }
 
   // Call startLoading when the user clicks on the document
   document.addEventListener("click", startLoading);
+
+  function rotateImage() {
+    var rotatingImage = document.getElementById("rotating-image");
+    if (rotatingImage) {
+      var rotation = 0;
+
+      // Function to perform rotation animation
+      function rotate() {
+        rotation += 1; // Adjust the rotation speed as needed
+        rotatingImage.style.transform = "rotate(" + rotation + "deg)";
+        requestAnimationFrame(rotate);
+      }
+
+      // Start the rotation animation
+      rotate();
+    } else {
+      console.error("Rotating image not found.");
+    }
+  }
+
+  rotateImage()
 });
