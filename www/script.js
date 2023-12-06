@@ -153,15 +153,26 @@ function toggleTheme() {
       // Change body background color to white and font color to black
       body.style.backgroundColor = "white";
       body.style.color = "black";
+      // Play MP3 when switching to light mode
+      playAudio("mp3/lightmode.mp3");
     } else {
       themeIcon.src = "images/sun.png"; // Change to sun image path
       // Reset body background color and font color to default values
       body.style.backgroundColor = "black";
       body.style.color = "white";
+      // Play MP3 when switching to dark mode
+      playAudio("mp3/lightmode.mp3");
     }
   }
 }
 
+// Helper function to play audio
+function playAudio(audioPath) {
+  var audio = new Audio(audioPath);
+  audio.play()
+    .then(() => console.log("Audio playback started"))
+    .catch(error => console.error("Error playing audio:", error));
+}
 
 
 
