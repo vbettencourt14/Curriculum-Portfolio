@@ -137,9 +137,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   rotateImage();
 
+  
 });
 
+function toggleTheme() {
+  var body = document.body;
+  body.classList.toggle("light-mode");
 
+  var themeIcon = document.getElementById("theme-icon");
+
+  // Toggle the image source based on the theme
+  if (themeIcon) {
+    if (body.classList.contains("light-mode")) {
+      themeIcon.src = "images/moon.png"; // Change to moon image path
+      // Change body background color to white and font color to black
+      body.style.backgroundColor = "white";
+      body.style.color = "black";
+    } else {
+      themeIcon.src = "images/sun.png"; // Change to sun image path
+      // Reset body background color and font color to default values
+      body.style.backgroundColor = "black";
+      body.style.color = "white";
+    }
+  }
+}
 
 
 

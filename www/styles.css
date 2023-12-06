@@ -1,184 +1,192 @@
-/* general body theme*/
+/* General body theme */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: black;
     color: white;
-    overflow: hidden; /* Hide scrollbar during loading animation */
-  }
-  
-/* container for the loading bar*/
-  #loading-container {
+    overflow: hidden;
+}
+
+/* Container for the loading bar */
+#loading-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: black;
-    display: none; /* Initially hide the loading container */
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9998; /* Set a lower z-index for the loading container */
+    z-index: 9998;
     opacity: 1;
     transition: opacity 2s ease;
-  }
-  
-  /* theme for the loading bar */
-  #loading-bar {
+}
+
+/* Theme for the loading bar */
+#loading-bar {
     opacity: 1;
     transition: opacity 1s ease;
     position: absolute;
     display: flex;
-    width: 520px; /* Adjust the width of the loading bar */
-    height: 40px; /* Height of the loading bar */
-    background-color: #333; /* Color of the loading bar */
-    border: 3px solid #020202
-  }
-  
-  /* the suqares tha divide the loading bar*/
-  .loading-square {
-    flex: 1;
-    background-color: #333; /* Dark grey color */
-    border: 1px solid black; /* Add a thin black border */
-    transition: background-color 0.5s ease, border-color 0.5s ease; /* Set transition duration to 0.5 seconds */
-  }
+    width: 520px;
+    height: 40px;
+    background-color: #333;
+    border: 3px solid #020202;
+}
 
-  /* refers to the loading bar and the cogwheel image */
-  #loading-content {
+/* The squares that divide the loading bar */
+.loading-square {
+    flex: 1;
+    background-color: #333;
+    border: 1px solid black;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Refers to the loading bar and the cogwheel image */
+#loading-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Adjust if needed based on your layout */
-  }
-  
-  /* cogwheel image */
-  #rotating-image {
+    flex-direction: column;
+}
+
+/* Cogwheel image */
+#rotating-image {
     position: relative;
-    width: 200px; /* Adjust the width as needed */
-    height: 200px; /* Adjust the height as needed */
-    animation: spin 3s linear infinite; /* Adjust the rotation speed */
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-/* style to center elements */
+    width: 200px;
+    height: 200px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style to center elements */
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #start-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
 }
 
-/* themes for the start button */
+/* Themes for the start button */
 #start-button {
-  cursor: pointer;
-  width: 200px; /* Adjust the width as needed */
-  height: 100px; /* Adjust the height as needed */
-  background-color: initial;
-  transition: filter 0.2s ease; /* Set transition duration for smooth effect */
+    cursor: pointer;
+    width: 200px;
+    height: 100px;
+    background-color: initial;
+    transition: filter 0.2s ease;
 }
 
-/* color change when hover over the start button */
+/* Color change when hover over the start button */
 #start-button:hover {
-  filter: brightness(4) sepia(3) hue-rotate(120deg); /* Adjust the values for brightness, sepia, and hue-rotate */ 
+    filter: brightness(4) sepia(3) hue-rotate(120deg);
 }
 
-/* transaction into the portfolio section */
+/* Transition into the portfolio section */
 #portfolio-section {
-  opacity: 0;
-  transition: opacity 1s ease; /* Set transition duration to 1 second */
+    opacity: 0;
+    transition: opacity 1s ease;
 }
- 
-/* Navigation tool bar theme and button stuff*/
 
+/* Navigation toolbar theme and button stuff */
 #toolbar {
-  position: fixed;
-  top:30%;
-  right: 0;
-  width: 70px; /* Adjust the width as needed */
-  height: 42%; /* Full height */
-  background-color: #333; /* Toolbar background color */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 10px; 
+    position: fixed;
+    top: 20%;
+    right: 0;
+    width: 70px;
+    height: 42%;
+    background-color: rgb(62, 62, 62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
 }
 
 .toolbar-image {
-  margin: 10px;
-  width: 50px; /* Adjust the width of the images */
-  height: 50px; /* Adjust the height of the images */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: filter 0.3s ease; /* Add a smooth transition effect */
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .toolbar-image:hover {
-  background-color: #00ff00; /* Bright green color on hover */
-  box-shadow: 0 0 11px rgba(0, 255, 0, 0.5); /* Green box shadow on hover */
+    background-color: #ff8800;
+    box-shadow: 0 0 11px rgba(255, 137, 10, 0.5);
 }
 
-.lightmode {
-  /* Your button styles... */
-  width: 50px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
-  margin: 5px; /* Adjust the margin as needed */
-  position: fixed;
-  right: 1;
-  margin-top: -63px;
-  animation: spin 3s linear infinite;
+.light-mode #toolbar {
+    background-color: #cbcbcb;
+}
+
+.light-mode .toolbar-image:hover {
+    background-color: #989aff;
+}
+
+.light-mode .circle-container {
+    background-color: #7c72ff;
+}
+
+.light-mode .circle-container:hover {
+    background-color: #3235ff;
+    animation: spin 3s linear infinite;
 }
 
 /* Style for the circular container */
 .circle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 100px; /* Adjust the width of the circle */
-  height: 100px; /* Adjust the height of the circle */
-  background-color: #333; /* Circle background color */
-  border-radius: 50%; /* Create a circular shape */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(121, 38, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
 }
 
 .circle-container:hover {
-  background-color: #ff8800; /* Orange color on hover */
+    background-color: #ff8800;
 }
 
 /* Style for the image inside the circle */
 .circle-container img {
-  width: 80%; /* Adjust the size of the image */
-  height: auto;
-  border-radius: 50%; /* Ensure the image is circular */
-  transition: transform 0.3s ease; /* Add a smooth transition effect */
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
 }
 
 /* Hover effect on the image */
 .circle-container:hover img {
-  transform: scale(1.1); /* Increase the size of the image on hover */
-  
+    transform: scale(1.1);
+    filter: brightness(2) invert(1); 
+    animation: spin 3s linear infinite;
 }
-/**/
-
-
-  
