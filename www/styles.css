@@ -107,27 +107,76 @@ body {
  
 /* Navigation tool bar theme and button stuff*/
 
-nav {
-  background-color: #333;
-  padding: 10px;
-  text-align: center;
+#toolbar {
+  position: fixed;
+  top:30%;
+  right: 0;
+  width: 70px; /* Adjust the width as needed */
+  height: 42%; /* Full height */
+  background-color: #333; /* Toolbar background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px; 
 }
 
-a, button {
-  text-decoration: none;
-  color: grey;
-  background-color: black;
-  padding: 8px 16px;
-  margin: 0 5px;
-  border: none;
-  border-radius: 4px;
+.toolbar-image {
+  margin: 10px;
+  width: 50px; /* Adjust the width of the images */
+  height: 50px; /* Adjust the height of the images */
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: filter 0.3s ease; /* Add a smooth transition effect */
 }
 
-a:hover, button:hover {
-  color: #00ff00;
-  border: 1px solid #00ff00;
+.toolbar-image:hover {
+  background-color: #00ff00; /* Bright green color on hover */
+  box-shadow: 0 0 11px rgba(0, 255, 0, 0.5); /* Green box shadow on hover */
+}
+
+.lightmode {
+  /* Your button styles... */
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin: 5px; /* Adjust the margin as needed */
+  position: fixed;
+  right: 1;
+  margin-top: -63px;
+  animation: spin 3s linear infinite;
+}
+
+/* Style for the circular container */
+.circle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px; /* Adjust the width of the circle */
+  height: 100px; /* Adjust the height of the circle */
+  background-color: #333; /* Circle background color */
+  border-radius: 50%; /* Create a circular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle-container:hover {
+  background-color: #ff8800; /* Orange color on hover */
+}
+
+/* Style for the image inside the circle */
+.circle-container img {
+  width: 80%; /* Adjust the size of the image */
+  height: auto;
+  border-radius: 50%; /* Ensure the image is circular */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect on the image */
+.circle-container:hover img {
+  transform: scale(1.1); /* Increase the size of the image on hover */
+  
 }
 /**/
 

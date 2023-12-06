@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  
+
   // Function to fill the loading squares progressively
   function fillSquares() {
     var squares = document.querySelectorAll(".loading-square");
@@ -136,3 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
   rotateImage();
 
 });
+
+
+
+
+
+
