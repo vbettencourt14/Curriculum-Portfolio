@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  
 
   // Function to fill the loading squares progressively
   function fillSquares() {
@@ -137,26 +136,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
   rotateImage();
 
+   // New code for the download button
+   var downloadImage = document.getElementById("downloadButton");
+
+   if (downloadImage) {
+     downloadImage.addEventListener("click", function (event) {
+       event.preventDefault(); // Prevent the default behavior of the anchor tag
+       downloadPDF("documents/curriculum.pdf");
+     });
+   } else {
+     console.error("Download image not found.");
+   }
+ 
+   // Function to download PDF
+   function downloadPDF(pdfPath) {
+     var link = document.createElement("a");
+     link.href = pdfPath;
+     link.target = "_blank";
+     link.download = "CV-Vasco_Bettencourt.pdf";
+     link.click();
+   }
+ 
+   // End of new code f
   
 });
+
+var scrollToTopButton = document.getElementById("scroll-to-top-button");
+
+  if (scrollToTopButton) {
+    scrollToTopButton.addEventListener("click", function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+      playAudio("mp3/toolbar.mp3")
+    });
+  } else {
+    console.error("Scroll-to-top button not found.");
+  }
+
+  function smoothScrollToTop() {
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (currentScroll > 0) {
+      window.requestAnimationFrame(smoothScrollToTop);
+      window.scrollTo(0, currentScroll - currentScroll / 8);
+    }
+  }
 
 function toggleTheme() {
   var body = document.body;
   body.classList.toggle("light-mode");
 
   var themeIcon = document.getElementById("theme-icon");
+  var curriculum = document.getElementById("curriculum-button")
 
   // Toggle the image source based on the theme
   if (themeIcon) {
     if (body.classList.contains("light-mode")) {
       themeIcon.src = "images/moon.png"; // Change to moon image path
+      curriculum.src = "images/curriculum2.png"
       // Change body background color to white and font color to black
       body.style.backgroundColor = "white";
       body.style.color = "black";
       // Play MP3 when switching to light mode
       playAudio("mp3/lightmode.mp3");
     } else {
-      themeIcon.src = "images/sun.png"; // Change to sun image path
+      themeIcon.src = "images/sun.png";
+      curriculum.src = "images/curriculum1.png" // Change to sun image path
       // Reset body background color and font color to default values
       body.style.backgroundColor = "black";
       body.style.color = "white";
@@ -173,6 +218,7 @@ function playAudio(audioPath) {
     .then(() => console.log("Audio playback started"))
     .catch(error => console.error("Error playing audio:", error));
 }
+
 
 
 

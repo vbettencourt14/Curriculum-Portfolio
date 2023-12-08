@@ -5,7 +5,17 @@ body {
     font-family: Arial, sans-serif;
     background-color: black;
     color: white;
-    overflow: hidden;
+}
+
+h1 {
+    font-size: 40px;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin-left: 20px;
 }
 
 /* Container for the loading bar */
@@ -110,6 +120,25 @@ body {
     transition: opacity 1s ease;
 }
 
+/* Themes for the start button */
+#curriculum-button {
+    cursor: pointer;
+    width: 250px;
+    height: 70px;
+    background-color: initial;
+    transition: filter 0.2s ease;
+    margin-left: 20px;
+}
+
+#section2 {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(59, 59, 59);
+    color: rgb(255, 255, 255);
+}
+
+
 /* Navigation toolbar theme and button stuff */
 #toolbar {
     position: fixed;
@@ -190,4 +219,13 @@ body {
     transform: scale(1.1);
     filter: brightness(2) invert(1); 
     animation: spin 3s linear infinite;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.pfp {
+    float: right;
+    margin-right: 30px;
 }
