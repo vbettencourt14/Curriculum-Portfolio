@@ -10,12 +10,29 @@ body {
 h1 {
     font-size: 40px;
     font-style: italic;
+}
+
+.h1_left {
     margin-left: 20px;
+}
+
+.h1_right {
+    float: right;
+    margin-right: 20px;
 }
 
 p {
     font-size: 20px;
+}
+
+.p_left{
+    float: left;
     margin-left: 20px;
+}
+
+.p_right{
+    float: right;
+    margin-right: 20px;
 }
 
 /* Container for the loading bar */
@@ -43,7 +60,7 @@ p {
     width: 520px;
     height: 40px;
     background-color: #333;
-    border: 3px solid #020202;
+    border: 3px solid #202020;
 }
 
 /* The squares that divide the loading bar */
@@ -130,12 +147,10 @@ p {
     margin-left: 20px;
 }
 
-#section2 {
+#interval {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: rgb(59, 59, 59);
-    color: rgb(255, 255, 255);
+    background-color: rgb(223, 74, 0);
 }
 
 
