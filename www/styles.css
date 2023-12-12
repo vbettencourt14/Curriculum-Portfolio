@@ -7,6 +7,14 @@ body {
     color: white;
 }
 
+strong{
+    color: #ff8800;
+}
+
+.light-mode strong{
+    color: #3235ff;
+}
+
 h1 {
     font-size: 40px;
     font-style: italic;
@@ -21,7 +29,7 @@ h1 {
 .h1_right,
 .p_right {
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 p {
