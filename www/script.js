@@ -114,6 +114,22 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Start button not found.");
   }
 
+  var toolbar = document.getElementById("toolbar");
+  var toggleButton = document.getElementById("toggleButton");
+  var image = document.getElementById("toggleButton");
+  
+  toggleButton.addEventListener("click", function () {
+    playAudio("sounds/toggle.wav");
+    toolbar.classList.toggle("collapsed");
+  
+    // Change the image source based on the toolbar state
+    if (toolbar.classList.contains("collapsed")) {
+      image.src = "images/toggleback.png";
+    } else {
+      image.src = "images/togglein.png";
+    }
+  });
+
   // Function to rotate the image
   function rotateImage() {
     var rotatingImage = document.getElementById("rotating-image");
@@ -161,13 +177,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
 });
 
+
+
 var scrollToTopButton = document.getElementById("scroll-to-top-button");
 
   if (scrollToTopButton) {
     scrollToTopButton.addEventListener("click", function () {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-      playAudio("mp3/toolbar.mp3")
+      playAudio("sounds/toolbar.mp3")
     });
   } else {
     console.error("Scroll-to-top button not found.");
@@ -199,7 +217,7 @@ function toggleTheme() {
       body.style.backgroundColor = "white";
       body.style.color = "black";
       // Play MP3 when switching to light mode
-      playAudio("mp3/lightmode.mp3");
+      playAudio("sounds/lightmode.mp3");
     } else {
       themeIcon.src = "images/sun.png";
       curriculum.src = "images/curriculum1.png" // Change to sun image path
@@ -208,7 +226,7 @@ function toggleTheme() {
       body.style.backgroundColor = "black";
       body.style.color = "white";
       // Play MP3 when switching to dark mode
-      playAudio("mp3/lightmode.mp3");
+      playAudio("sounds/lightmode.mp3");
     }
   }
 }
