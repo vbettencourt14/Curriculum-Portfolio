@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 });
 
-
+//FIRST TOOLBAR BUTTON LOGIC - NICKNAMED:HOME
 
 var scrollToTopButton = document.getElementById("scroll-to-top-button");
 
@@ -200,20 +200,65 @@ var scrollToTopButton = document.getElementById("scroll-to-top-button");
     }
   }
 
+
+// SECOND TOOLBAR BUTTON LOGIC - NICKNAMED: INTRODUCTION
+var scrollToIntroductionButton = document.getElementById("scroll-to-introduction");
+
+if (scrollToIntroductionButton) {
+  scrollToIntroductionButton.addEventListener("click", function () {
+    playAudio("sounds/toolbar.mp3");
+    smoothScrollToIntroduction();
+  });
+} else {
+  console.error("Scroll-to-introduction button not found.");
+}
+
+function smoothScrollToIntroduction() {
+  var targetPosition = 700; // Replace this with the actual position of the introduction section
+  var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
+
+  var start = null;
+  var initialY = document.documentElement.scrollTop || document.body.scrollTop;
+
+  function step(timestamp) {
+    if (!start) {
+      start = timestamp;
+    }
+
+    var progress = timestamp - start;
+    var ease = progress / duration;
+
+    var newY = initialY + (targetPosition - initialY) * ease;
+
+    window.scrollTo(0, newY);
+
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    } else {
+      window.scrollTo(0, targetPosition); // Snap to the target position at the end
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+
+
+
+
 function toggleTheme() {
   var body = document.body;
   body.classList.toggle("light-mode");
 
   var themeIcon = document.getElementById("theme-icon");
   var curriculum = document.getElementById("curriculum-button")
-  var interval = document.getElementById("interval")
+  var interval1 = document.getElementById("interval1")
 
   // Toggle the image source based on the theme
   if (themeIcon) {
     if (body.classList.contains("light-mode")) {
       themeIcon.src = "images/moon.png"; // Change to moon image path
       curriculum.src = "images/curriculum2.png"
-      interval.style.backgroundColor = "#3235ff";
+      interval1.style.backgroundColor = "#3235ff";
       body.style.backgroundColor = "white";
       body.style.color = "black";
       // Play MP3 when switching to light mode
@@ -221,7 +266,7 @@ function toggleTheme() {
     } else {
       themeIcon.src = "images/sun.png";
       curriculum.src = "images/curriculum1.png" // Change to sun image path
-      interval.style.backgroundColor =  "#ff8800";
+      interval1.style.backgroundColor =  "#ff8800";
       // Reset body background color and font color to default values
       body.style.backgroundColor = "black";
       body.style.color = "white";
