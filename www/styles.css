@@ -30,6 +30,7 @@ h1 {
 .p_right {
     float: right;
     margin-right: 10px;
+    flex-direction: row;
 }
 
 p {
