@@ -4,15 +4,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to fill the loading squares progressively
   function fillSquares() {
     var squares = document.querySelectorAll(".loading-square");
-    var cogwheel = document.getElementById("rotating-image");
 
     // Helper function to play audio and handle errors
-    function playAudio() {
+    function playAudio(audioPath) {
       var audioPlayer = document.getElementById("audio-player");
       if (audioPlayer) {
-        audioPlayer.play()
-          .then(() => console.log("Audio playback started"))
-          .catch(error => console.error("Error playing audio:", error));
+        if (audioPath) {
+          // Play the specified audio
+          new Audio(audioPath).play()
+            .then(() => console.log("Audio playback started"))
+            .catch(error => console.error("Error playing audio:", error));
+        } else {
+          // Play the default audio from the audio-player element
+          audioPlayer.play()
+            .then(() => console.log("Audio playback started"))
+            .catch(error => console.error("Error playing audio:", error));
+        }
       } else {
         console.error("Audio player not found.");
       }
@@ -23,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (squareIndex < squares.length) {
         squares[squareIndex].style.backgroundColor = "#006400"; // Turn the square dark green
         squareIndex++;
+        playAudio("sounds/square.mp3")
       } else {
         clearInterval(interval);
 
@@ -38,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 1000); // Wait for 1 second after the last square turns dark green
 
           // Play the audio after the loading bar is complete
-          playAudio();
+          playAudio("sounds/loading.mp3");
         }, 1000); // Wait for 1 second after the last square turns dark green
       }
     }, 1000); // Set the duration for each square to fill (adjust as needed)
@@ -251,14 +259,12 @@ function toggleTheme() {
 
   var themeIcon = document.getElementById("theme-icon");
   var curriculum = document.getElementById("curriculum-button")
-  var interval1 = document.getElementById("interval1")
 
   // Toggle the image source based on the theme
   if (themeIcon) {
     if (body.classList.contains("light-mode")) {
       themeIcon.src = "images/moon.png"; // Change to moon image path
       curriculum.src = "images/curriculum2.png"
-      interval1.style.backgroundColor = "#3235ff";
       body.style.backgroundColor = "white";
       body.style.color = "black";
       // Play MP3 when switching to light mode
@@ -266,7 +272,6 @@ function toggleTheme() {
     } else {
       themeIcon.src = "images/sun.png";
       curriculum.src = "images/curriculum1.png" // Change to sun image path
-      interval1.style.backgroundColor =  "#ff8800";
       // Reset body background color and font color to default values
       body.style.backgroundColor = "black";
       body.style.color = "white";

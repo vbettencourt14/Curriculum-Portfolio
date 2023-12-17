@@ -154,9 +154,22 @@ p {
 #interval1 {
     margin: 0;
     padding: 0;
-    background-color: rgb(223, 74, 0);
+    background-color: #ff8800;
 }
 
+.light-mode #interval1 {
+    background-color: #4346ff;
+}
+
+#interval2 {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 139, 100);
+}
+
+.light-mode #interval2 {
+    background-color: #7678ff;
+}
 
 /* Navigation toolbar theme and button stuff */
 #toolbar {
@@ -193,11 +206,19 @@ p {
 }
 
 
-.section2{
-    background-color: rgb(251, 63, 0);
+#section2{
+    background-color: rgb(255, 139, 100);
     margin: 0;
     padding: 0;
+    color: black;
 }
+
+.light-mode #section2{
+    background-color: #7678ff;
+    color: white;
+}
+
+
 
 
 .toolbar-image {
