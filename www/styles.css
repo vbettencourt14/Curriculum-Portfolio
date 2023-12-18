@@ -195,27 +195,29 @@ p {
 
 
 
-.cert1 {
+.cert1, .cert2 {
     display: flex;
-    background: url("images/patio.jpg");
-    border-top: 10px solid #1759a4;
-    border-bottom: 10px solid #1759a4;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust as needed */
     margin-top: 20px; /* Adjust the top margin as needed */
     padding: 20px; /* Add padding to create space within the cert1 element */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
   
-
-.cert2{
-    display: flex;
-    background: url("images/cambschool.jpg");
+  .cert1 {
+    background-image: url("images/patio.jpg");
+    border-top: 10px solid #1759a4;
+    border-bottom: 10px solid #1759a4;
+  }
+  
+  .cert2 {
+    background-image: url("images/cambschool.jpg");
     border-top: 10px solid #860000;
     border-bottom: 10px solid #860000;
-    margin-top: 20px; /* Adjust the top margin as needed */
-    padding: 20px; /* Add padding to create space within the cert1 element */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
 
-}
 
 .sec2image1{
     height: 250px;
@@ -239,6 +241,8 @@ p {
   border: 10px solid #1759a4; /* Add a border to the cert_content1 element */
   padding: 20px;
   margin-left: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
 .light-mode .cert_content1{
@@ -248,7 +252,7 @@ p {
 }
 
 .cert_content1 p{
-    font-size: 18px;
+    font-size: 30px;
 }
 
 .sec2image2{
@@ -282,7 +286,7 @@ p {
 }
 
 .cert_content2 p{
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .cert-image{
@@ -293,10 +297,6 @@ p {
 
 .cert-image:hover{
     scale: 1.03;
-}
-
-.p_detail{
-    font-size: 15px;
 }
 
 
