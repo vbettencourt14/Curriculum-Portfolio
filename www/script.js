@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image.src = "images/toggleback.png";
     } else {
       image.src = "images/togglein.png";
+      
     }
   });
 
@@ -296,6 +297,7 @@ function toggleTheme() {
 
   var themeIcon = document.getElementById("theme-icon");
   var curriculum = document.getElementById("curriculum-button")
+  var dcual = document.getElementById("dcual")
   
 
   // Toggle the image source based on the theme
@@ -305,6 +307,7 @@ function toggleTheme() {
       curriculum.src = "images/curriculum2.png"
       body.style.backgroundColor = "white";
       body.style.color = "black";
+      dcual.src = "images/dcual2.png"
       // Play MP3 when switching to light mode
       playAudio("sounds/lightmode.mp3");
     } else {
@@ -312,6 +315,7 @@ function toggleTheme() {
       curriculum.src = "images/curriculum1.png"
       body.style.backgroundColor = "black";
       body.style.color = "white";
+      dcual.src = "images/dcual1.png"
       // Play MP3 when switching to dark mode
       playAudio("sounds/lightmode.mp3");
     }
