@@ -29,8 +29,13 @@ h1 {
 .h1_right,
 .p_right {
     float: right;
-    margin-right: 30px;
+    margin-right: 20px;
     flex-direction: row;
+}
+
+.small-p-left{
+    margin-left: 20px;
+    font-size: small !important;
 }
 
 p {
@@ -341,7 +346,7 @@ p {
     justify-content: flex-start;
     border-radius: 10px;
     transition: right 0.5s ease; /* Add transition property */
-    border: 5px solid rgb(227, 0, 0);
+    border: 5px solid rgb(70, 0, 0);
 }
 
 #toolbar.collapsed {

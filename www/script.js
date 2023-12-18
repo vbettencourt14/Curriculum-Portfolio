@@ -262,7 +262,7 @@ if (scrollToCertificatesButton) {
 }
 
 function smoothScrollToCertificates() {
-  var targetPosition = 1810; // Replace this with the actual position of the introduction section
+  var targetPosition = 1800; // Replace this with the actual position of the introduction section
   var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
 
   var start = null;
