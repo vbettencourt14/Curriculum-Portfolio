@@ -383,16 +383,18 @@ p {
 
 .superior-circle{
     position: fixed;
-    top: -40px;
-    right:-40px;
+    top: -50px;
+    right:-50px;
     width: 190px;
     height: 190px;
     background-color: rgb(61, 0, 0);
     border-radius: 50%;
+    border: 10px solid #860000;
 }
 
 .light-mode .superior-circle{
     background-color: #000265;
+    border: 10px solid #2900f9;
 }
 
 /* Style for the circular container */
