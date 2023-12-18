@@ -161,14 +161,171 @@ p {
     background-color: #4346ff;
 }
 
+.pf_image{
+    width: 400px;
+    height: 600px;
+    border: 7px solid #ff8800;
+    margin-left: 20px;
+}
+
+.light-mode .pf_image{
+    border: 7px solid #3235ff;
+}
+
 #interval2 {
     margin: 0;
     padding: 0;
-    background-color: rgb(255, 139, 100);
+    background-color: #ff8800;
 }
 
 .light-mode #interval2 {
-    background-color: #7678ff;
+    background-color: #4043ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cert1 {
+    display: flex;
+    background: url("images/patio.jpg");
+    border-top: 10px solid #1759a4;
+    border-bottom: 10px solid #1759a4;
+    margin-top: 20px; /* Adjust the top margin as needed */
+    padding: 20px; /* Add padding to create space within the cert1 element */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+
+.cert2{
+    display: flex;
+    background: url("images/cambschool.jpg");
+    border-top: 10px solid #860000;
+    border-bottom: 10px solid #860000;
+    margin-top: 20px; /* Adjust the top margin as needed */
+    padding: 20px; /* Add padding to create space within the cert1 element */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+}
+
+.sec2image1{
+    height: 250px;
+    width: 250px;
+    margin-left: 60px;
+    background-color: rgb(0, 8, 91);
+    border: 10px solid #1759a4;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.light-mode .sec2image1{
+    background-color: white;
+    border-color: #0060ce;
+}
+
+.cert_content1 {
+  color: rgb(102, 144, 250);
+  background-color: black;
+  border-radius: 30px;
+  border: 10px solid #1759a4; /* Add a border to the cert_content1 element */
+  padding: 20px;
+  margin-left: 30px;
+}
+
+.light-mode .cert_content1{
+    color: rgb(45, 70, 132);
+    background-color: rgb(255, 255, 255);
+    border-color: #0060ce;
+}
+
+.cert_content1 p{
+    font-size: 18px;
+}
+
+.sec2image2{
+    height: 290px;
+    width: 250px;
+    margin-left: 60px;
+    background-color: rgb(103, 3, 3);
+    border: 10px solid rgb(71, 16, 16);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.light-mode .sec2image2{
+    background-color: rgb(255, 255, 255);
+    border-color: #ae0000;
+}
+
+.cert_content2 {
+  color: rgb(169, 11, 11);
+  background-color: black;
+  border-radius: 30px;
+  border: 10px solid rgb(71, 16, 16); /* Add a border to the cert_content1 element */
+  padding: 20px;
+  margin-left: 30px;
+  }
+
+.light-mode .cert_content2{
+    color: rgb(83, 5, 5);
+    background-color: rgb(255, 255, 255);
+    border-color: #ae0000;
+}
+
+.cert_content2 p{
+    font-size: 24px;
+}
+
+.cert-image{
+    cursor: pointer;
+    width: 220px;
+    height: 100px;
+}
+
+.cert-image:hover{
+    scale: 1.03;
+}
+
+.p_detail{
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle{
+    position: fixed;
+    top: 94px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(255, 0, 51));
+}
+
+.light-mode .toggle:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(25, 0, 255));
 }
 
 /* Navigation toolbar theme and button stuff */
@@ -190,36 +347,6 @@ p {
 #toolbar.collapsed {
     right: -70px; /* Move the toolbar to the right */
 }
-
-.toggle{
-    position: fixed;
-    top: 105px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.toggle:hover{
-    filter: brightness(1) invert(3); 
-}
-
-
-#section2{
-    background-color: rgb(255, 139, 100);
-    margin: 0;
-    padding: 0;
-    color: black;
-}
-
-.light-mode #section2{
-    background-color: #7678ff;
-    color: white;
-}
-
-
-
 
 .toolbar-image {
     margin: 10px;
@@ -251,13 +378,28 @@ p {
 .light-mode .circle-container:hover {
     background-color: #3235ff;
     animation: spin 3s linear infinite;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 21, 255));
+}
+
+.superior-circle{
+    position: fixed;
+    top: -40px;
+    right:-40px;
+    width: 190px;
+    height: 190px;
+    background-color: rgb(61, 0, 0);
+    border-radius: 50%;
+}
+
+.light-mode .superior-circle{
+    background-color: #000265;
 }
 
 /* Style for the circular container */
 .circle-container {
     cursor: pointer;
     position: fixed;
-    top: 30px;
+    top: 20px;
     right: 20px;
     width: 70px;
     height: 70px;
@@ -272,6 +414,7 @@ p {
 
 .circle-container:hover {
     background-color: #ff8800;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 0, 51));
 }
 
 /* Style for the image inside the circle */

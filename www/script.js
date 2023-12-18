@@ -180,9 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
      link.download = "CV-Vasco_Bettencourt.pdf";
      link.click();
    }
- 
-   // End of new code f
-  
+
 });
 
 //FIRST TOOLBAR BUTTON LOGIC - NICKNAMED:HOME
@@ -250,7 +248,46 @@ function smoothScrollToIntroduction() {
   window.requestAnimationFrame(step);
 }
 
+// THIRD TOOLBAR BUTTON LOGIC - NICKNAMED: CERTIFICATES
+var scrollToCertificatesButton = document.getElementById("scroll-to-certificates");
 
+if (scrollToCertificatesButton) {
+  scrollToCertificatesButton.addEventListener("click", function () {
+    playAudio("sounds/toolbar.mp3");
+    smoothScrollToCertificates();
+  });
+} else {
+  console.error("Scroll-to-introduction button not found.");
+}
+
+function smoothScrollToCertificates() {
+  var targetPosition = 1810; // Replace this with the actual position of the introduction section
+  var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
+
+  var start = null;
+  var initialY = document.documentElement.scrollTop || document.body.scrollTop;
+
+  function step(timestamp) {
+    if (!start) {
+      start = timestamp;
+    }
+
+    var progress = timestamp - start;
+    var ease = progress / duration;
+
+    var newY = initialY + (targetPosition - initialY) * ease;
+
+    window.scrollTo(0, newY);
+
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    } else {
+      window.scrollTo(0, targetPosition); // Snap to the target position at the end
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
 
 
 function toggleTheme() {
@@ -259,6 +296,7 @@ function toggleTheme() {
 
   var themeIcon = document.getElementById("theme-icon");
   var curriculum = document.getElementById("curriculum-button")
+  
 
   // Toggle the image source based on the theme
   if (themeIcon) {
@@ -271,8 +309,7 @@ function toggleTheme() {
       playAudio("sounds/lightmode.mp3");
     } else {
       themeIcon.src = "images/sun.png";
-      curriculum.src = "images/curriculum1.png" // Change to sun image path
-      // Reset body background color and font color to default values
+      curriculum.src = "images/curriculum1.png"
       body.style.backgroundColor = "black";
       body.style.color = "white";
       // Play MP3 when switching to dark mode
