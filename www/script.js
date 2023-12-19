@@ -158,30 +158,31 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Rotating image not found.");
     }
   }
-
+  
   rotateImage();
 
-   // New code for the download button
-   var downloadImage = document.getElementById("downloadButton");
+  // New code for the download button
+  var downloadImage = document.getElementById("downloadButton");
 
-   if (downloadImage) {
-     downloadImage.addEventListener("click", function (event) {
-       event.preventDefault(); // Prevent the default behavior of the anchor tag
-       downloadPDF("documents/curriculum.pdf");
-     });
-   } else {
-     console.error("Download image not found.");
-   }
- 
-   // Function to download PDF
-   function downloadPDF(pdfPath) {
-     var link = document.createElement("a");
-     link.href = pdfPath;
-     link.target = "_blank";
-     link.download = "CV-Vasco_Bettencourt.pdf";
-     link.click();
-   }
+  if (downloadImage) {
+    downloadImage.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default behavior of the anchor tag
+      downloadPDF("documents/curriculum.pdf");
+    });
+  } else {
+    console.error("Download image not found.");
+  }
 
+  // Function to download PDF
+  function downloadPDF(pdfPath) {
+    var link = document.createElement("a");
+    link.href = pdfPath;
+    link.target = "_blank";
+    link.download = "CV-Vasco_Bettencourt.pdf";
+    link.click();
+  }
+
+   
 });
 
 //FIRST TOOLBAR BUTTON LOGIC - NICKNAMED:HOME
@@ -262,7 +263,7 @@ if (scrollToCertificatesButton) {
 }
 
 function smoothScrollToCertificates() {
-  var targetPosition = 2750; // Replace this with the actual position of the introduction section
+  var targetPosition = 2770; // Replace this with the actual position of the introduction section
   var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
 
   var start = null;
@@ -307,13 +308,13 @@ function toggleTheme() {
     if (body.classList.contains("light-mode")) {
       themeIcon.src = "images/moon.png"; // Change to moon image path
       curriculum.src = "images/curriculum2.png"
-      body.style.backgroundColor = "white";
+      body.style.backgroundColor = "rgb(239, 181, 72)";
       body.style.color = "black";
       dcual.src = "images/dcual2.png"
       bg.src = "images/quote2.jpg"
       mask.src = "images/ma2.png"
       // Play MP3 when switching to light mode
-      playAudio("sounds/lightmode.mp3");
+      playAudio("sounds/on.mp3");
     } else {
       themeIcon.src = "images/sun.png";
       curriculum.src = "images/curriculum1.png"
@@ -323,7 +324,7 @@ function toggleTheme() {
       bg.src = "images/quote1.jpg"
       mask.src = "images/ma1.png"
       // Play MP3 when switching to dark mode
-      playAudio("sounds/lightmode.mp3");
+      playAudio("sounds/off.mp3");
     }
   }
 }
@@ -337,5 +338,18 @@ function playAudio(audioPath) {
 }
 
 
+function changeImage() {
+  const image = document.getElementById("turn");
 
 
+  // Change the image source after a delay
+  setTimeout(() => {
+    if (image.src.endsWith("images/hydra.png")) {
+      image.src = "images/mm.jpg";
+      image.classList.toggle("rotated");
+    } else {
+      image.src = "images/hydra.png";
+      image.classList.toggle("rotated");
+    }
+  }, 500); // Adjust the delay to match the transition duration
+}
