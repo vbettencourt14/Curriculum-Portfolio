@@ -41,6 +41,20 @@ h1 {
 p {
     font-size: 20px;
     display: block;
+    font-family: "Georgia", serif;
+}
+
+p.style1{
+    font-size: 20px;
+    display: block;
+    color: white;
+    font-family: "Georgia", serif;
+}
+
+h1.style1{
+    color: white; /* Red color */
+  font-size: 36px;
+  font-weight: bold;
 }
 
 
@@ -168,9 +182,10 @@ p {
 
 .pf_image{
     width: 400px;
-    height: 600px;
+    height: 640px;
     border: 7px solid #ff8800;
     margin-left: 20px;
+    margin-top: 25px;
 }
 
 .light-mode .pf_image{
@@ -217,14 +232,14 @@ p {
     position: absolute;
     width: 2px;
     height: 15px; /* Adjust the height of the vertical lines */
-    background-color: black; /* Adjust the color as needed */
+    background-color: #ff8800; /* Adjust the color as needed */
     z-index: 2;
     border: 2px solid #ff8800;
     margin-top: -6px;
   }
 
   .light-mode .vertical-line{
-    background-color: white;
+    background-color: #2900f9;
     border: 2px solid #2900f9;
   }
 
@@ -404,7 +419,8 @@ p {
 }
 
 .cert-image:hover{
-    scale: 1.03;
+    scale: 1.05;
+    transition: 0.4s;
 }
 
 
@@ -555,3 +571,48 @@ html {
     float: right;
     margin-right: 30px;
 }
+
+.proj{
+    text-align: center;
+    font-size: 25px;
+    font-family: "Georgia", serif;
+}
+
+.proj-title{
+    font-family: "Georgia", serif;
+    color: white;
+    position: relative;
+    
+}
+
+.p1{
+    background: url("images/p1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.proj1-content{
+    color: rgb(102, 144, 250); /* Add a border to the cert_content1 element */
+    padding: 20px;
+    margin-left: 30px;
+    align-items: center;
+    position: absolute;
+}
+
+.cs-line{
+    background-color: white;
+    height: 5px;
+    width: 560px;
+}
+
+.proj-image{
+    width: 330px;
+    height: 480px;
+    margin-right: 30px;
+    float: right;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 50px;
+}
+
