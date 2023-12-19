@@ -187,7 +187,111 @@ p {
     background-color: #4043ff;
 }
 
+#interval3 {
+    text-align: center;
+    color: #ff8800;
+}
 
+.light-mode #interval3 {
+    color: #4043ff;
+}
+
+
+.center{
+    align-items: center;
+}
+.interval-line {
+    position: relative;
+    width: 1170px; /* Adjust the total width as needed */
+    height: 5px;
+    background-color: #ff8800; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line */
+    z-index: 1;
+}
+
+.light-mode .interval-line{
+    background-color: #2900f9;
+}
+
+.vertical-line {
+    position: absolute;
+    width: 2px;
+    height: 15px; /* Adjust the height of the vertical lines */
+    background-color: black; /* Adjust the color as needed */
+    z-index: 2;
+    border: 2px solid #ff8800;
+    margin-top: -6px;
+  }
+
+  .light-mode .vertical-line{
+    background-color: white;
+    border: 2px solid #2900f9;
+  }
+
+  .number {
+    position: absolute;
+    top: 20px; /* Adjust the vertical position as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+    color: #ff8800;
+    z-index: 3;
+  }
+
+  .light-mode .number{
+    color: #2900f9;
+  }
+
+
+  .quote{
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    margin-left: 500px;
+    margin-top: -300px;
+    position: absolute;
+  }
+
+  .light-mode .quote{
+    color: black;
+  }
+
+  .quote-s{
+    position: absolute;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    margin-left: 510px;
+    margin-top: -250px;
+  }
+  
+  .light-mode .quote-s{
+    color: black;
+  }
+
+  .container {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .background {
+    width: 300px; 
+    height: 500px;
+    object-fit: cover;
+    margin-top: 85px;
+    margin-left: 193px;
+  }
+  
+  .mask {
+    width: 480px; 
+    height: 600px;
+    left: 100px; /* Adjust the position of the mask as needed */
+    position: absolute;
+    background: url('images/ma1') center / cover no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);    
+  }
 
 
 
@@ -322,6 +426,7 @@ p {
     height: 40px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 6;
 }
 
 .toggle:hover{
@@ -347,6 +452,7 @@ p {
     border-radius: 10px;
     transition: right 0.5s ease; /* Add transition property */
     border: 5px solid rgb(70, 0, 0);
+    z-index: 4;
 }
 
 #toolbar.collapsed {
@@ -396,6 +502,7 @@ p {
     background-color: rgb(61, 0, 0);
     border-radius: 50%;
     border: 10px solid #860000;
+    z-index: 5;
 }
 
 .light-mode .superior-circle{
@@ -418,6 +525,7 @@ p {
     align-items: center;
     overflow: hidden;
     transition: background-color 0.3s ease;
+    z-index: 6;
 }
 
 .circle-container:hover {

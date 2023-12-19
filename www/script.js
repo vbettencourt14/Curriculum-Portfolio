@@ -262,7 +262,7 @@ if (scrollToCertificatesButton) {
 }
 
 function smoothScrollToCertificates() {
-  var targetPosition = 1800; // Replace this with the actual position of the introduction section
+  var targetPosition = 2750; // Replace this with the actual position of the introduction section
   var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
 
   var start = null;
@@ -298,6 +298,8 @@ function toggleTheme() {
   var themeIcon = document.getElementById("theme-icon");
   var curriculum = document.getElementById("curriculum-button")
   var dcual = document.getElementById("dcual")
+  var bg = document.getElementById("background")
+  var mask = document.getElementById("mask")
   
 
   // Toggle the image source based on the theme
@@ -308,6 +310,8 @@ function toggleTheme() {
       body.style.backgroundColor = "white";
       body.style.color = "black";
       dcual.src = "images/dcual2.png"
+      bg.src = "images/quote2.jpg"
+      mask.src = "images/ma2.png"
       // Play MP3 when switching to light mode
       playAudio("sounds/lightmode.mp3");
     } else {
@@ -316,6 +320,8 @@ function toggleTheme() {
       body.style.backgroundColor = "black";
       body.style.color = "white";
       dcual.src = "images/dcual1.png"
+      bg.src = "images/quote1.jpg"
+      mask.src = "images/ma1.png"
       // Play MP3 when switching to dark mode
       playAudio("sounds/lightmode.mp3");
     }
