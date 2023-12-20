@@ -61,6 +61,38 @@ h1.style1{
   font-weight: bold;
 }
 
+#particles-section {
+    position: relative;
+    height: 100vh;
+    background-color: rgb(41, 41, 41); /* Set your desired background color */
+  }
+
+.light-mode #particles-section {
+    background-color: rgb(241, 195, 108);
+
+}
+  
+  .particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5); /* Set particle color and opacity */
+    border-radius: 100%;
+    animation: moveParticle linear infinite;
+    transition-duration: 5s;
+  }
+
+  .light-mode .particle{
+    background-color: #471100;
+    transition-duration: 5s;
+  }
+  
+  @keyframes moveParticle {
+    to {
+      transform: translate(0, 0);
+    }
+  }
+
+
+
 
 /* Container for the loading bar */
 #loading-container {
@@ -140,7 +172,7 @@ h1.style1{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(86, 86, 86);
+    background-color: black;
     z-index: 9999;
 }
 
@@ -150,12 +182,14 @@ h1.style1{
     width: 200px;
     height: 100px;
     background-color: initial;
-    transition: filter 0.3s ease;
+    transition: 0.3s;
 }
 
 /* Color change when hover over the start button */
 #start-button:hover {
     filter: brightness(10) sepia(3) hue-rotate(120deg);
+    box-shadow: 0 0 300000px rgb(132, 247, 255);
+    transition: 0.3s;
 }
 
 /* Transition into the portfolio section */
@@ -188,7 +222,7 @@ h1.style1{
 }
 
 .interval-filling{
-    background-color: #f64f1d;
+    background-color: #ff0000;
 }
 
 .light-mode .interval-filling{
@@ -337,12 +371,12 @@ h1.style1{
     position: absolute;
     background: url('images/ma1') center / cover no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);    
-    border: 2px solid #860000;    
+    border: 4px solid #860000;    
     border-radius: 100%;
   }
 
   .light-mode .mask{
-    border: 2px solid #05581b; 
+    border: 4px solid #520073; 
   }
 
   .grey-section{
@@ -666,12 +700,18 @@ html {
 
 #turn {
     cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
   }
   
 .rotated {
     transform: rotateY(180deg);
     transition: transform 0.5s ease-in-out;
 }
+
+  .hidden {
+    opacity: 0;
+  }
+
 
 .report{
     cursor: pointer;
@@ -685,6 +725,6 @@ html {
 .report:hover{
     scale: 1.05;
     transition: 0.4s;
-    box-shadow: 0 0 30px rgba(11, 228, 102);
+    box-shadow: 0 0 200px rgba(11, 228, 102);
 
 }

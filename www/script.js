@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 1000); // Set the duration for each square to fill (adjust as needed)
   }
+  
 
   // Function to initiate the loading process
   function startLoading() {
@@ -89,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  
   // Function to handle button click
   function handleButtonClick() {
     var startContainer = document.getElementById("start-container");
@@ -138,6 +140,61 @@ document.addEventListener("DOMContentLoaded", function () {
       
     }
   });
+
+  const particleCount = 100; // Adjust the number of particles
+    const particlesSection = document.getElementById('particles-section');
+
+    for (let i = 0; i < particleCount; i++) {
+      createParticle();
+    }
+
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particlesSection.appendChild(particle);
+
+      const size = 2.5; // Adjust the size of particles
+      const duration = 5; // Adjust the duration of particle movement
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.animationDuration = `${duration}s`;
+
+      // Animation listener to reset particle position within the visible area
+      particle.addEventListener('animationiteration', () => {
+        const maxX = particlesSection.clientWidth - size;
+        const maxY = particlesSection.clientHeight - size;
+
+        const newInitialX = Math.random() * maxX;
+        const newInitialY = Math.random() * maxY;
+
+        particle.style.left = `${newInitialX}px`;
+        particle.style.top = `${newInitialY}px`;
+      });
+
+      resetParticlePosition(particle, size);
+    }
+
+    // Update particle positions when the window is resized
+    window.addEventListener('resize', () => {
+      const particles = document.querySelectorAll('.particle');
+      const size = parseFloat(particles[0].style.width); // Assume all particles have the same size
+
+      particles.forEach((particle) => {
+        resetParticlePosition(particle, size);
+      });
+    });
+
+    function resetParticlePosition(particle, size) {
+      const maxX = particlesSection.clientWidth - size;
+      const maxY = particlesSection.clientHeight - size;
+
+      const newInitialX = Math.random() * maxX;
+      const newInitialY = Math.random() * maxY;
+
+      particle.style.left = `${newInitialX}px`;
+      particle.style.top = `${newInitialY}px`;
+    }
 
   // Function to rotate the image
   function rotateImage() {
@@ -263,7 +320,7 @@ if (scrollToCertificatesButton) {
 }
 
 function smoothScrollToCertificates() {
-  var targetPosition = 2770; // Replace this with the actual position of the introduction section
+  var targetPosition = 2700; // Replace this with the actual position of the introduction section
   var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
 
   var start = null;
@@ -341,15 +398,19 @@ function playAudio(audioPath) {
 function changeImage() {
   const image = document.getElementById("turn");
 
+  // Add a class to hide the image (opacity: 0)
+  image.classList.add("hidden");
 
-  // Change the image source after a delay
+  // Use setTimeout to wait for the transition effect to be applied
   setTimeout(() => {
+    // Change the image source after the transition is complete
     if (image.src.endsWith("images/hydra.png")) {
       image.src = "images/mm.jpg";
-      image.classList.toggle("rotated");
     } else {
       image.src = "images/hydra.png";
-      image.classList.toggle("rotated");
     }
+
+    // Remove the hidden class to make the image visible again
+    image.classList.remove("hidden");
   }, 500); // Adjust the delay to match the transition duration
 }
