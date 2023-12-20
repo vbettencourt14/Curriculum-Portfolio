@@ -357,7 +357,7 @@ h1.style1{
   }
   
   .background {
-    width: 300px; 
+    width: 320px; 
     height: 400px;
     object-fit: cover;
     margin-top: 85px;
@@ -725,6 +725,6 @@ html {
 .report:hover{
     scale: 1.05;
     transition: 0.4s;
-    box-shadow: 0 0 200px rgba(11, 228, 102);
+    box-shadow: 0 0 50px rgba(11, 228, 102);
 
 }
