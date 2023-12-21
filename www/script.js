@@ -279,7 +279,7 @@ if (scrollToIntroductionButton) {
 }
 
 function smoothScrollToIntroduction() {
-  var targetPosition = 700; // Replace this with the actual position of the introduction section
+  var targetPosition = 778; // Replace this with the actual position of the introduction section
   var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
 
   var start = null;
@@ -320,7 +320,7 @@ if (scrollToCertificatesButton) {
 }
 
 function smoothScrollToCertificates() {
-  var targetPosition = 2700; // Replace this with the actual position of the introduction section
+  var targetPosition = 2840; // Replace this with the actual position of the introduction section
   var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
 
   var start = null;
@@ -348,6 +348,46 @@ function smoothScrollToCertificates() {
   window.requestAnimationFrame(step);
 }
 
+// FOURTH TOOLBAR BUTTON LOGIC - NICKNAMED: PROJECTS
+var scrollToProjectsButton = document.getElementById("scroll-to-projects");
+
+if (scrollToProjectsButton) {
+  scrollToProjectsButton.addEventListener("click", function () {
+    playAudio("sounds/toolbar.mp3");
+    smoothScrollToProjects();
+  });
+} else {
+  console.error("Scroll-to-introduction button not found.");
+}
+
+function smoothScrollToProjects() {
+  var targetPosition = 4700; // Replace this with the actual position of the introduction section
+  var duration = 0; // Set the duration of the smooth scroll (in milliseconds)
+
+  var start = null;
+  var initialY = document.documentElement.scrollTop || document.body.scrollTop;
+
+  function step(timestamp) {
+    if (!start) {
+      start = timestamp;
+    }
+
+    var progress = timestamp - start;
+    var ease = progress / duration;
+
+    var newY = initialY + (targetPosition - initialY) * ease;
+
+    window.scrollTo(0, newY);
+
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    } else {
+      window.scrollTo(0, targetPosition); // Snap to the target position at the end
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
 
 function toggleTheme() {
   var body = document.body;
@@ -356,7 +396,6 @@ function toggleTheme() {
   var themeIcon = document.getElementById("theme-icon");
   var curriculum = document.getElementById("curriculum-button")
   var dcual = document.getElementById("dcual")
-  var bg = document.getElementById("background")
   var mask = document.getElementById("mask")
   
 
@@ -368,8 +407,7 @@ function toggleTheme() {
       body.style.backgroundColor = "rgb(239, 181, 72)";
       body.style.color = "black";
       dcual.src = "images/dcual2.png"
-      bg.src = "images/quote2.jpg"
-      mask.src = "images/ma2.png"
+      mask.src = "images/ma22.png"
       // Play MP3 when switching to light mode
       playAudio("sounds/on.mp3");
     } else {
@@ -378,8 +416,7 @@ function toggleTheme() {
       body.style.backgroundColor = "black";
       body.style.color = "white";
       dcual.src = "images/dcual1.png"
-      bg.src = "images/quote1.jpg"
-      mask.src = "images/ma1.png"
+      mask.src = "images/ma11.png"
       // Play MP3 when switching to dark mode
       playAudio("sounds/off.mp3");
     }
@@ -414,3 +451,4 @@ function changeImage() {
     image.classList.remove("hidden");
   }, 500); // Adjust the delay to match the transition duration
 }
+
