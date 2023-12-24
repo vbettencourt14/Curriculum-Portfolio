@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const particleCount = 100; // Adjust the number of particles
+  const particleCount = 50; // Adjust the number of particles
     const particlesSection = document.getElementById('particles-section');
 
     for (let i = 0; i < particleCount; i++) {
@@ -394,35 +394,41 @@ function toggleTheme() {
   body.classList.toggle("light-mode");
 
   var themeIcon = document.getElementById("theme-icon");
-  var curriculum = document.getElementById("curriculum-button")
-  var dcual = document.getElementById("dcual")
-  var mask = document.getElementById("mask")
-  
+  var curriculum = document.getElementById("curriculum-button");
+  var dcual = document.getElementById("dcual");
+  var dividers = document.getElementsByClassName("divider");
 
   // Toggle the image source based on the theme
   if (themeIcon) {
     if (body.classList.contains("light-mode")) {
-      themeIcon.src = "images/moon.png"; // Change to moon image path
-      curriculum.src = "images/curriculum2.png"
+      themeIcon.src = "images/moon.png";
+      curriculum.src = "images/curriculum2.png";
       body.style.backgroundColor = "rgb(239, 181, 72)";
       body.style.color = "black";
-      dcual.src = "images/dcual2.png"
-      mask.src = "images/ma22.png"
-      // Play MP3 when switching to light mode
+      dcual.src = "images/dcual2.png";
+
+      // Iterate through dividers and update each one
+      for (var i = 0; i < dividers.length; i++) {
+        dividers[i].src = "images/divider2.png";
+      }
+
       playAudio("sounds/on.mp3");
     } else {
       themeIcon.src = "images/sun.png";
-      curriculum.src = "images/curriculum1.png"
+      curriculum.src = "images/curriculum1.png";
       body.style.backgroundColor = "black";
       body.style.color = "white";
-      dcual.src = "images/dcual1.png"
-      mask.src = "images/ma11.png"
-      // Play MP3 when switching to dark mode
+      dcual.src = "images/dcual1.png";
+
+      // Iterate through dividers and update each one
+      for (var i = 0; i < dividers.length; i++) {
+        dividers[i].src = "images/divider1.png";
+      }
+
       playAudio("sounds/off.mp3");
     }
   }
 }
-
 // Helper function to play audio
 function playAudio(audioPath) {
   var audio = new Audio(audioPath);

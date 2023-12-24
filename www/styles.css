@@ -243,6 +243,17 @@ h1.style1{
     transition: 0.5s;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 #interval2 {
     margin: 0;
     padding: 0;
@@ -267,9 +278,33 @@ h1.style1{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .center{
     align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 .interval-line {
     position: relative;
     width: 1170px; /* Adjust the total width as needed */
@@ -317,6 +352,24 @@ h1.style1{
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .quote{
     font-family: 'Roboto Slab', serif;
     font-size: 25px;
@@ -356,13 +409,29 @@ h1.style1{
     height: 600px;
     left: 100px; /* Adjust the position of the mask as needed */
     position: relative;
-    border: 4px solid #860000;    
+    border: 4px solid #ffffff;    
     border-radius: 100%;
+    filter: grayscale(100%);
+    transition: 0.3s;
   }
 
   .light-mode .mask{
-    border: 4px solid #520073; 
+    border: 4px solid #5b007f; 
+    filter: grayscale(0%);
+    transition: 0.3s;
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   .grey-section{
     background-color: rgb(41, 41, 41);
@@ -372,7 +441,18 @@ h1.style1{
     background-color: rgb(241, 195, 108);
   }
 
-.cert1, .cert2 {
+
+
+
+
+
+
+
+
+
+
+
+.cert1, .cert2, .cert3 {
     display: flex;
     background-attachment: fixed;
     background-position: center;
@@ -395,6 +475,13 @@ h1.style1{
     border-bottom: 10px solid #860000;
   }
 
+  .cert3 {
+    background-image: url("images/camb.jpg");
+    border-top: 10px solid #860000;
+    border-bottom: 10px solid #860000;
+  }
+
+
 
 .sec2image1{
     height: 250px;
@@ -411,6 +498,10 @@ h1.style1{
     background-color: rgb(255, 188, 43);
     border-color: #0060ce;
     transition: 0.5s;
+}
+
+.sec2image1:hover{
+    filter: brightness(1.3);
 }
 
 .cert_content1 {
@@ -434,6 +525,28 @@ h1.style1{
     font-size: 30px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .sec2image2{
     height: 290px;
     width: 250px;
@@ -449,6 +562,10 @@ h1.style1{
     background-color: rgb(212, 186, 135);
     border-color: #ae0000;
     transition: 0.5s;
+}
+
+.sec2image2:hover{
+    filter: brightness(1.3);
 }
 
 .cert_content2 {
@@ -496,24 +613,6 @@ h1.style1{
 
 
 
-.toggle{
-    position: fixed;
-    top: 94px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 6;
-}
-
-.toggle:hover{
-    filter: drop-shadow(0 0 0.75rem rgb(255, 0, 51));
-}
-
-.light-mode .toggle:hover{
-    filter: drop-shadow(0 0 0.75rem rgb(25, 0, 255));
-}
 
 /* Navigation toolbar theme and button stuff */
 #toolbar {
@@ -563,37 +662,101 @@ h1.style1{
     box-shadow: 0 0 11px rgba(10, 39, 255, 0.5);
 }
 
-.light-mode .circle-container {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(255, 0, 51));
+}
+
+.light-mode .toggle:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(25, 0, 255));
+}
+
+/* Style for the circular container of the TOGGLE BUTTON*/
+.circle-container2 {
+    cursor: pointer;
+    position: fixed;
+    top: 97px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(121, 38, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    z-index: 6;
+}
+
+.circle-container2:hover {
+    background-color: #ff8800;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 0, 51));
+}
+
+/* Style for the image inside the toggle button */
+.circle-container2 img {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Hover effect on the image */
+.circle-container2:hover img {
+    filter: brightness(2) invert(1); 
+}
+
+.light-mode .circle-container2 {
     background-color: #7c72ff;
 }
 
-.light-mode .circle-container:hover {
+.light-mode .circle-container2:hover {
     background-color: #3235ff;
-    animation: spin 3s linear infinite;
     filter: drop-shadow(0 0 0.75rem rgb(0, 21, 255));
 }
 
-.superior-circle{
-    position: fixed;
-    top: -50px;
-    right:-50px;
-    width: 190px;
-    height: 190px;
-    background-color: rgb(61, 0, 0);
-    border-radius: 50%;
-    border: 10px solid #860000;
-    z-index: 5;
-    transition: 0.5s;
-}
 
-.light-mode .superior-circle{
-    background-color: #000265;
-    border: 10px solid #2900f9;
-    transition: 0.5s;
-}
 
-/* Style for the circular container */
-.circle-container {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for the circular container of the LIGHT MODE*/
+.circle-container1 {
     cursor: pointer;
     position: fixed;
     top: 20px;
@@ -610,24 +773,66 @@ h1.style1{
     z-index: 6;
 }
 
-.circle-container:hover {
+.circle-container1:hover {
     background-color: #ff8800;
     filter: drop-shadow(0 0 0.75rem rgb(255, 0, 51));
 }
 
 /* Style for the image inside the circle */
-.circle-container img {
+.circle-container1 img {
     width: 80%;
     height: auto;
     border-radius: 50%;
 }
 
 /* Hover effect on the image */
-.circle-container:hover img {
+.circle-container1:hover img {
     transform: scale(1.1);
     filter: brightness(2) invert(1); 
     animation: spin 3s linear infinite;
 }
+
+.light-mode .circle-container1 {
+    background-color: #7c72ff;
+}
+
+.light-mode .circle-container1:hover {
+    background-color: #3235ff;
+    animation: spin 3s linear infinite;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 21, 255));
+}
+
+.superior-circle{
+    position: fixed;
+    top: -50px;
+    right:-50px;
+    width: 190px;
+    height: 190px;
+    background-color: rgb(50, 0, 0);
+    border-radius: 50%;
+    border: 10px solid #540000;
+    z-index: 5;
+    transition: 0.5s;
+}
+
+.light-mode .superior-circle{
+    background-color: #000265;
+    border: 10px solid #2900f9;
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 html {
     scroll-behavior: smooth;
@@ -637,6 +842,20 @@ html {
     float: right;
     margin-right: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .proj{
     text-align: center;
@@ -675,12 +894,16 @@ html {
 .proj-image{
     width: 330px;
     height: 480px;
-    margin-right: 60px;
+    margin-right: 40px;
     float: right;
     border-radius: 15px;
     margin-top: 20px;
     border: 5px solid rgb(24, 188, 104);
     cursor: pointer;
+}
+
+.proj-image:hover{
+    filter: brightness(1.5);
 }
 
 #turn {
@@ -713,3 +936,4 @@ html {
     box-shadow: 0 0 50px rgba(11, 228, 102);
 
 }
+
