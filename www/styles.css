@@ -985,7 +985,7 @@ html {
   }
 
   .light-mode .preview-image{
-    border: 4px solid #ed3700;
+    border: 4px solid transparent;
     transition: 0.3s;
   }
 
@@ -1030,8 +1030,8 @@ html {
   }
 
   .close-button img{
-    width: 70px;
-    height: 60px;
+    width: 60px;
+    height: 50px;
   }
 
   .close-button:hover{
