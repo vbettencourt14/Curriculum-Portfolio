@@ -449,8 +449,10 @@ function changeImage() {
     // Change the image source after the transition is complete
     if (image.src.endsWith("images/hydra.png")) {
       image.src = "images/mm.jpg";
+      playAudio("sounds/hydraim.mp3");
     } else {
       image.src = "images/hydra.png";
+      playAudio("sounds/hydraim.mp3");
     }
 
     // Remove the hidden class to make the image visible again
@@ -458,3 +460,28 @@ function changeImage() {
   }, 500); // Adjust the delay to match the transition duration
 }
 
+
+function showLargeContainer(mediaType, videoUrl, posterUrl, description) {
+  document.getElementById('largeContent').innerHTML = '';
+
+  if (mediaType === 'video') {
+    // Embed video player with poster image
+    document.getElementById('largeContent').innerHTML = `
+      <video controls width="100%" poster="${posterUrl}">
+        <source src="${videoUrl}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>`;
+  } else if (mediaType === 'photo') {
+    // Display photo (replace the URL with your photo URL)
+    document.getElementById('largeContent').innerHTML = '<img src="large-photo.jpg" alt="Large Photo" style="width: 100%;">';
+  }
+
+  document.getElementById('description').innerText = description;
+
+  document.getElementById('largeContainer').classList.add('active');
+}
+
+function hideLargeContainer() {
+  document.getElementById('largeContent').innerHTML = ''; // Clear the content
+  document.getElementById('largeContainer').classList.remove('active');
+}
