@@ -337,26 +337,26 @@
     <br>
     <div class="preview-container">
       <div class="preview-item" onclick="showLargeContainer('video', 'videos/video1.mp4', 'images/video1preview.jpg', 'Game Project - Menu Concept')">
-        <img src="images/video1preview.jpg" alt="Video Preview" style="width: 100%;">
-        <p>Game Project - Menu Concept</p>
+        <img src="images/video1preview.jpg" alt="Video Preview" class="preview-image">
+        <p>Game Project - Menu Concept<br>Unity 2021.3.17f1</p>
       </div>
     
-      <div class="preview-item" onclick="showLargeContainer('photo')">
-        <!-- Photo preview -->
-        <img src="photo-thumbnail.jpg" alt="Photo Preview" style="width: 100%;">
-        <p>Photo Title</p>
+      <div class="preview-item" onclick="showLargeContainer('video', 'videos/map1.mp4', 'images/map1.png', 'Map - Training Grounds')">
+        <img src="images/map1.png" alt="Photo Preview" class="preview-image">
+        <p>Game Project - Playable Map<br>Unity 2021.2.10f1</p>
       </div>
-    
+
       <div class="preview-item" onclick="showLargeContainer('video', 'video2.mp4', 'images/video2preview.jpg', 'Another Video Title')">
-        <!-- Video preview -->
-        <img src="images/video2preview.jpg" alt="Video Preview" style="width: 100%;">
+        <img src="images/video2preview.jpg" alt="Video Preview" class="preview-image">
         <p>Another Video Title</p>
       </div>
     </div>
     
     <div class="large-container" id="largeContainer">
       <div class="media-content">
-        <img class="close-button" onclick="hideLargeContainer()" src="images/close.png">
+        <div class="close-button" onclick="hideLargeContainer()">
+          <img src="images/close.png" alt="close">
+        </div>
         <div id="largeContent"></div>
         <p id="description">Description goes here.</p>
       </div>

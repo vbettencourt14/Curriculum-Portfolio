@@ -461,22 +461,25 @@ function changeImage() {
 }
 
 
-function showLargeContainer(mediaType, videoUrl, posterUrl, description) {
+function showLargeContainer(mediaType, fileUrl, posterUrl, description) {
   document.getElementById('largeContent').innerHTML = '';
 
   if (mediaType === 'video') {
     // Embed video player with poster image
     document.getElementById('largeContent').innerHTML = `
       <video controls width="100%" poster="${posterUrl}">
-        <source src="${videoUrl}" type="video/mp4">
+        <source src="${fileUrl}" type="video/mp4">
         Your browser does not support the video tag.
       </video>`;
   } else if (mediaType === 'photo') {
-    // Display photo (replace the URL with your photo URL)
-    document.getElementById('largeContent').innerHTML = '<img src="large-photo.jpg" alt="Large Photo" style="width: 100%;">';
+    // Display large photo
+    document.getElementById('largeContent').innerHTML = `<img src="${fileUrl}" alt="Large Photo" style="width: 100%;">`;
   }
 
   document.getElementById('description').innerText = description;
+
+  // Add a "Close" image
+  document.getElementById('largeContent').innerHTML += '<div class="close-button" onclick="hideLargeContainer()"></div>';
 
   document.getElementById('largeContainer').classList.add('active');
 }
