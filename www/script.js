@@ -394,7 +394,6 @@ function toggleTheme() {
   body.classList.toggle("light-mode");
 
   var themeIcon = document.getElementById("theme-icon");
-  var curriculum = document.getElementById("curriculum-button");
   var dcual = document.getElementById("dcual");
   var dividers = document.getElementsByClassName("divider");
 
@@ -402,7 +401,6 @@ function toggleTheme() {
   if (themeIcon) {
     if (body.classList.contains("light-mode")) {
       themeIcon.src = "images/moon.png";
-      curriculum.src = "images/curriculum2.png";
       body.style.backgroundColor = "rgb(239, 181, 72)";
       body.style.color = "black";
       dcual.src = "images/dcual2.png";
@@ -415,7 +413,6 @@ function toggleTheme() {
       playAudio("sounds/on.mp3");
     } else {
       themeIcon.src = "images/sun.png";
-      curriculum.src = "images/curriculum1.png";
       body.style.backgroundColor = "black";
       body.style.color = "white";
       dcual.src = "images/dcual1.png";
@@ -465,6 +462,7 @@ function showLargeContainer(mediaType, fileUrl, posterUrl, description) {
   document.getElementById('largeContent').innerHTML = '';
 
   if (mediaType === 'video') {
+    playAudio("sounds/openwork.mp3")
     // Embed video player with poster image
     document.getElementById('largeContent').innerHTML = `
       <video controls width="100%" poster="${posterUrl}">
@@ -472,6 +470,7 @@ function showLargeContainer(mediaType, fileUrl, posterUrl, description) {
         Your browser does not support the video tag.
       </video>`;
   } else if (mediaType === 'photo') {
+    playAudio("sounds/openwork.mp3")
     // Display large photo
     document.getElementById('largeContent').innerHTML = `<img src="${fileUrl}" alt="Large Photo" style="width: 100%;">`;
   }
@@ -485,6 +484,7 @@ function showLargeContainer(mediaType, fileUrl, posterUrl, description) {
 }
 
 function hideLargeContainer() {
+  playAudio("sounds/close.mp3")
   document.getElementById('largeContent').innerHTML = ''; // Clear the content
   document.getElementById('largeContainer').classList.remove('active');
 }
